@@ -6716,6 +6716,14 @@ func (p *PingEvent) GetInstallation() *Installation {
 	return p.Installation
 }
 
+// GetRepo returns the Repo field.
+func (p *PingEvent) GetRepo() *Repository {
+	if p == nil {
+		return nil
+	}
+	return p.Repo
+}
+
 // GetZen returns the Zen field if it's non-nil, zero value otherwise.
 func (p *PingEvent) GetZen() string {
 	if p == nil || p.Zen == nil {

@@ -497,6 +497,7 @@ type PingEvent struct {
 	// The webhook configuration.
 	Hook         *Hook         `json:"hook,omitempty"`
 	Installation *Installation `json:"installation,omitempty"`
+	Repo         *Repository   `json:"repository,omitempty"`
 }
 
 // ProjectEvent is triggered when project is created, modified or deleted.
