@@ -3284,6 +3284,14 @@ func (h *Hook) GetActive() bool {
 	return *h.Active
 }
 
+// GetConfig returns the Config field.
+func (h *Hook) GetConfig() *HookConfig {
+	if h == nil {
+		return nil
+	}
+	return h.Config
+}
+
 // GetCreatedAt returns the CreatedAt field if it's non-nil, zero value otherwise.
 func (h *Hook) GetCreatedAt() time.Time {
 	if h == nil || h.CreatedAt == nil {
@@ -3310,6 +3318,30 @@ func (h *Hook) GetUpdatedAt() time.Time {
 
 // GetURL returns the URL field if it's non-nil, zero value otherwise.
 func (h *Hook) GetURL() string {
+	if h == nil || h.URL == nil {
+		return ""
+	}
+	return *h.URL
+}
+
+// GetContentType returns the ContentType field if it's non-nil, zero value otherwise.
+func (h *HookConfig) GetContentType() string {
+	if h == nil || h.ContentType == nil {
+		return ""
+	}
+	return *h.ContentType
+}
+
+// GetInsecureSSL returns the InsecureSSL field if it's non-nil, zero value otherwise.
+func (h *HookConfig) GetInsecureSSL() string {
+	if h == nil || h.InsecureSSL == nil {
+		return ""
+	}
+	return *h.InsecureSSL
+}
+
+// GetURL returns the URL field if it's non-nil, zero value otherwise.
+func (h *HookConfig) GetURL() string {
 	if h == nil || h.URL == nil {
 		return ""
 	}

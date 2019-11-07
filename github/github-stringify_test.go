@@ -469,10 +469,10 @@ func TestHook_String(t *testing.T) {
 	v := Hook{
 		URL:    String(""),
 		ID:     Int64(0),
-		Config: nil,
+		Config: &HookConfig{},
 		Active: Bool(false),
 	}
-	want := `github.Hook{URL:"", ID:0, Config:map[], Active:false}`
+	want := `github.Hook{URL:"", ID:0, Config:github.HookConfig{}, Active:false}`
 	if got := v.String(); got != want {
 		t.Errorf("Hook.String = %v, want %v", got, want)
 	}
